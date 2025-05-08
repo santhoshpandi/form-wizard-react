@@ -4,7 +4,7 @@ import { usePage } from "../contexts/Pages";
 import { enqueueSnackbar } from "notistack";
 
 export default function BasicInfo() {
-  const { data, setData, setPage } = usePage()
+  const { data, setData, setPage, resetData } = usePage()
 
   const handleData = (e) => {
     const { name, value, type, checked } = e.target
@@ -30,6 +30,8 @@ export default function BasicInfo() {
       )
     }
   }
+
+  
 
   const submitData = (e) => {
     e.preventDefault()
@@ -77,10 +79,15 @@ export default function BasicInfo() {
         </div>
 
 
-        <section className="flex justify-end px-4 pt-6">
+        <section className="flex justify-between px-4 pt-6">
+          <button
+            onClick={resetData}
+            className="bg-green-400 px-2 py-1 cursor-pointer rounded-md">
+            Reset
+          </button>
           <button
             onClick={(e) => submitData(e)}
-            className="bg-green-400 px-2 py-1 cursor-pointer">
+            className="bg-green-400 px-2 py-1 cursor-pointer rounded-md">
             Next
           </button>
         </section>

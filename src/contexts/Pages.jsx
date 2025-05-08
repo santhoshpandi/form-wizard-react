@@ -33,10 +33,25 @@ export function PageProvider({ children }) {
   
   useEffect(() => {
     if(hasLoaded) localStorage.setItem('dta',JSON.stringify(data))
-  },[data,hasLoaded])
+  }, [data, hasLoaded])
+  
+  const resetData = () => {
+      setData({
+        name: '', email: '', interests: {
+          sports: {
+            interest: false,
+            favourite:[]
+          },
+          music: {
+            interest: false,
+            favourite:[]
+          },
+        }
+      })
+    }
 
   return (
-    <PageContext.Provider value={{ page, setPage, data, setData, able, setAble }}>
+    <PageContext.Provider value={{ page, setPage, data, setData, able, setAble, resetData }}>
       {children}
     </PageContext.Provider>
   )

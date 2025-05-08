@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <div className='bg-[#dafffd] md:min-w-[30%] md:max-w-[40%] w-[100%] mx-auto rounded-md '>
+    <div className='bg-[#dafffd] md:min-w-[30%] md:max-w-[40%] w-[95%] mx-auto rounded-md '>
       <SnackbarProvider />
       <section className='bg-[#124E65] mt-10 flex justify-around items-center px-2 py-4 rounded-md'>
         <span
