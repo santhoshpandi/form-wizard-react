@@ -60,6 +60,7 @@ export default function Review() {
 
       <span>
         <input
+          checked={!able}
           onClick={() => setAble(!able)}
           type="checkbox" name="" id="terms" /> &nbsp;
         <label htmlFor="terms">I agree to the <b className="text-amber-800">Terms & Conditions</b></label>
